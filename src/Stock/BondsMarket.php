@@ -39,7 +39,8 @@ class BondsMarket extends Market
         'dailylow' => 'low',
         'dailyhigh' => 'high',
         'yield' => 'yield',
-        'duration' => 'duration'
+        'duration' => 'duration',
+        'currentprice' => 'lcurrentprice'
     );
     
     /**
