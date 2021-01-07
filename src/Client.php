@@ -652,4 +652,15 @@ class Client
         $uri = 'statistics/engines/currency/markets/selt/rates';
         return $this->getData($uri);
     }
+
+    /**
+     * Get the bond info
+     *
+     * @return array
+     */
+    public function getBondInfo(string $security_code)
+    {
+        $uri = 'statistics/engines/stock/markets/bonds/bondization/' . $security_code;
+        return $this->getData($uri);
+    }
 }

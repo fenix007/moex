@@ -497,4 +497,22 @@ class Security extends AbstractEntry
         
         return $data;
     }
+
+    /**
+     * Load the bond specification
+     *
+     * @throws Exception\DataException for unknown bonds
+     * @return void
+     */
+    public function getBondInfo()
+    {
+        $bond = Client::getInstance()->getBondInfo($this->getId());
+
+        if (empty($bond)) {
+            $message = sprintf('Security "%s" not found', $this->getId());
+            throw new Exception\DataException($message, Exception\DataException::EMPTY_RESULT);
+        }
+
+        return $bond;
+    }
 }
